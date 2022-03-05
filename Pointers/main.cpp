@@ -11,7 +11,9 @@ int main() {
 	 y = &x;
 	 cout << *y << endl;
 	 cout << y << endl;
-
+ 
+    int K =20;
+    cout << &K << endl;
 
 	return 0;
 }
