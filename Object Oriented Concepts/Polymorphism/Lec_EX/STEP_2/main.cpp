@@ -17,23 +17,23 @@ class Cat : public Animal {
 public:
 
 	Cat(char tname[]) : Animal(){ 
-    cout << "Meow... Meow..." << endl;}
+    cout << "Meow... Meow..."<< tname << endl;}
 
 };
 
 class Dog : public Animal {
 public:
 
-	Dog(char tname[]){ 
-    cout << "Bow... Bow..." << endl;
+	Dog(char tname[]): Animal(){ 
+    cout << "Bow... Bow..."<< tname << endl;
     }
 
 };
 class Cow: public Animal {
 public:
 
-	Cow(char tname[])  {
-    cout << "Moo... Moo..." << endl;}
+	Cow(char tname[]): Animal()  {
+    cout << "Moo... Moo..."<< tname << endl;}
 
 };
 int main()
