@@ -56,6 +56,6 @@ int main()
 {
 	Product *P1 = new Product("P001","Mugs" , 200.00);
 	SalesPerson *SP = new SalesPerson("Ajith");
-	SP->addSales(10, P1);
+	SP->addSales(9, P1);
 	SP->display();
 }
