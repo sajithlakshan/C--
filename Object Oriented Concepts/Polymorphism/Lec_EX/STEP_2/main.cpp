@@ -5,7 +5,9 @@ using namespace std;
 class Animal {
 
 public:
-	Animal() {}
+	Animal() {
+    cout << "HARAKA" << endl;
+  }
 
 	virtual void speak() {}
 
@@ -14,7 +16,7 @@ public:
 class Cat : public Animal {
 public:
 
-	Cat(char tname[]) : Animal() { 
+	Cat(char tname[]) : Animal(){ 
     cout << "Meow... Meow..." << endl;}
 
 };
@@ -22,7 +24,7 @@ public:
 class Dog : public Animal {
 public:
 
-	Dog(char tname[]): Animal() { 
+	Dog(char tname[]){ 
     cout << "Bow... Bow..." << endl;
     }
 
@@ -30,7 +32,7 @@ public:
 class Cow: public Animal {
 public:
 
-	Cow(char tname[]) : Animal() {
+	Cow(char tname[])  {
     cout << "Moo... Moo..." << endl;}
 
 };
