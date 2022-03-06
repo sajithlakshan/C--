@@ -19,8 +19,19 @@ using namespace std;
 
  public:
  	Customer();
- 	Customer(string pname, string paddress);
- 	void addOrder(Order *O);
+ 	Customer(string pname, string paddress)
+ 	{
+	     name = pname;
+	     address = paddress;
+	     noOfOrders = 0;
+	 }
+ 	void addOrder(Order *O){
+ 	    if (noOfOrders < SIZE) {
+     	order[noOfOrders] = O;
+ 	    }
+     noOfOrders++;
+ 		
+	 }
  	void displayCustomer();
  };
 
@@ -31,36 +42,21 @@ using namespace std;
     	Customer *Cus;        ///#
    
  public:  
-    	Order(string	porderID,  Customer *pCus);
-    	void displayOrders();
+    	Order(string	porderID,  Customer *pCus)
+		{
+		     orderID = porderID;
+		     Cus = pCus;
+		     Cus->addOrder(this);			
+    		
+		}
+    	void displayOrders()
+		{
+    		cout << "\t\tOrder ID : " << orderID << endl;
+		}
  };
 
- Order::Order (string porderID,  Customer *pCus) 
- {  
-     orderID = porderID;
-     Cus = pCus;
-     Cus->addOrder(this);
- }
 
- void Order::displayOrders()
- {
-	cout << "\t\tOrder ID : " << orderID << endl;
- }
 
- Customer::Customer(string pname, string paddress)
- {
-     name = pname;
-     address = paddress;
-     noOfOrders = 0;
- }
-
- void Customer::addOrder(Order *O)
- {
-     if (noOfOrders < SIZE) {
-     	order[noOfOrders] = O;
- 	}
-     noOfOrders++;
- }
 
  void Customer::displayCustomer()
  {
